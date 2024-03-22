@@ -5,8 +5,8 @@ O CRUD feito tem como objetivo inserir, listar, atualizar e apagar os produtos e
 Foram criados dois arquivos Python o primeiro chamado programa.py e o segundo chamado utils.py
 
 O arquivo programa.py recebeu o menu do CRUD, conseguimos isso após importar a função menu do arquivo utils.py e chamamos essa função logo após. O programa.py é essencial, pois é nele que iremos rodar o nosso CRUD.
-J
-á no arquivo utils.py foi importado a biblioteca MySQLdb através do comando no terminal pip install MySQLclient, essa biblioteca nos forece a possibilidade de conectar o CRUD com nosso servidor MySQL, além disso o utils.py também recebeu todas as funções que foram usadas para conectar, desconectar, listar, inserir, atualizar, apagar os produtos e os tipos, e exibir o menu. 
+
+Já no arquivo utils.py foi importado a biblioteca MySQLdb através do comando no terminal pip install MySQLclient, essa biblioteca nos forece a possibilidade de conectar o CRUD com nosso servidor MySQL, além disso o utils.py também recebeu todas as funções que foram usadas para conectar, desconectar, listar, inserir, atualizar, apagar os produtos e os tipos, e exibir o menu. 
 
 Vamos começar com a primeira função encontrada = conectar():
 
