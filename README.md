@@ -30,5 +30,56 @@ A função inserir_tipo_produto tem como responsabilidade inserir os tipos de pr
 
 Função inserir_produto():
 
-A função inserir_produto tem como responsabilidade inserir os produtos no CRUD. Seu funcionamento se dá da seguinte forma: primeiro criamos a variável conection que recebeu a função conectar, fazendo assim o CRUD se conectar com o servidor MySQL. Logo após criamos a variável cursor, que será de extrema importância para podermos executar os comandos SQL no python, cursor recebeu a função cursor da variável conection. Após a criação dessas duas variáveis, foi criada quatro novas variáveis (nome, preco, estoque, tipo) cada uma irá pedir ao usuário que digite a informação que ele gostaria de inserir. Depois essa variável, foi chamada a função execute do cursor, que executou o comando INSERT INTO produtos (nome, preco, estoque, id_tipo) VALUES ('{nome}', {preco}, {estoque}, {tipo}), inserindo cada informação do produto na tabela produtos. Após executar o comando, foi chamada a função commit() da variável conection que irá confirmar o comando SQL. Posteriormente foi incluído um if, que verifica se o total de linhas armazenada no cursor é igual a 1, ou seja, se o comando foi executado com sucesso, se sim irá printar uma mensagem confirmando a inserção, se não irá printar uma mensagem de erro. Após tudo isso será chamada a função desconectar, que irá desconectar o servidor.
+A função inserir_produto tem como responsabilidade inserir os produtos no CRUD. Seu funcionamento se dá da seguinte forma: primeiro criamos a variável conection que recebeu a função conectar, fazendo assim o CRUD se conectar com o servidor MySQL. Logo após criamos a variável cursor, que será de extrema importância para podermos executar os comandos SQL no python, cursor recebeu a função cursor da variável conection. Após a criação dessas duas variáveis, foram criadas quatro novas variáveis (nome, preco, estoque, tipo) cada uma irá pedir ao usuário que digite a informação que ele gostaria de inserir. Depois essa variável, foi chamada a função execute do cursor, que executou o comando INSERT INTO produtos (nome, preco, estoque, id_tipo) VALUES ('{nome}', {preco}, {estoque}, {tipo}), inserindo cada informação do produto na tabela produtos. Após executar o comando, foi chamada a função commit() da variável conection que irá confirmar o comando SQL. Posteriormente foi incluído um if, que verifica se o total de linhas armazenada no cursor é igual a 1, ou seja, se o comando foi executado com sucesso, se sim irá printar uma mensagem confirmando a inserção, se não irá printar uma mensagem de erro. Após tudo isso será chamada a função desconectar, que irá desconectar o servidor.
+
+Função atualizar_tipo_produto():
+
+A função atualzar_tipo_produto tem como responsabilidade atualizar os tipos dos produtos já inseridos no CRUD. Seu funcionamento se dá da seguinte forma: primeiro criamos a variável conection que recebeu a função conectar, fazendo assim o CRUD se conectar com o servidor MySQL. Logo após criamos a variável cursor, que será de extrema importância para podermos executar os comandos SQL no python, cursor recebeu a função cursor da variável conection. Após a criação dessas duas variáveis, foram criadas duas novas variáveis (codigo, descricao) cada uma irá pedir ao usuário que digite a informação que ele gostaria de inserir. Depois essa variável, foi chamada a função execute do cursor, que executou o comando UPDATE tipos_produto SET descricao='{descricao}' WHERE id={codigo}, atualizando o tipo do produto na tabela tipos_produto. Após executar o comando, foi chamada a função commit() da variável conection que irá confirmar o comando SQL. Posteriormente foi incluído um if, que verifica se o total de linhas armazenada no cursor é igual a 1, ou seja, se o comando foi executado com sucesso, se sim irá printar uma mensagem confirmando a inserção, se não irá printar uma mensagem de erro. Após tudo isso será chamada a função desconectar, que irá desconectar o servidor.
+
+Função atualizar_produto():
+
+A função atualzar_produto tem como responsabilidade atualizar os produtos já inseridos no CRUD. Seu funcionamento se dá da seguinte forma: primeiro criamos a variável conection que recebeu a função conectar, fazendo assim o CRUD se conectar com o servidor MySQL. Logo após criamos a variável cursor, que será de extrema importância para podermos executar os comandos SQL no python, cursor recebeu a função cursor da variável conection. Após a criação dessas duas variáveis, foram criadas cinco novas variáveis (codigo, nome, preco, estoque, tipo) cada uma irá pedir ao usuário que digite a informação que ele gostaria de inserir. Depois essa variável, foi chamada a função execute do cursor, que executou o comando UPDATE produtos SET nome='{nome}, preco={preco}, estoque={estoque}, id_tipo={tipo} WHERE id={codigo}, atualizando o os dados do produto na tabela produtos. Após executar o comando, foi chamada a função commit() da variável conection que irá confirmar o comando SQL. Posteriormente foi incluído um if, que verifica se o total de linhas armazenada no cursor é igual a 1, ou seja, se o comando foi executado com sucesso, se sim irá printar uma mensagem confirmando a inserção, se não irá printar uma mensagem de erro. Após tudo isso será chamada a função desconectar, que irá desconectar o servidor.
+
+Função deletar_tipo_produto():
+
+A função deletar_tipo_produto tem como responsabilidade deletar os tipos dos produtos já inseridos no CRUD. Seu funcionamento se dá da seguinte forma: primeiro criamos a variável conection que recebeu a função conectar, fazendo assim o CRUD se conectar com o servidor MySQL. Logo após criamos a variável cursor, que será de extrema importância para podermos executar os comandos SQL no python, cursor recebeu a função cursor da variável conection. Após a criação dessas duas variáveis, foi criada uma nova variável (codigo) ela irá pedir ao usuário que digite a informação que ele gostaria de inserir. Depois essa variável, foi chamada a função execute do cursor, que executou o comando DELETE FROM tipos_produto WHERE id={codigo}, deletando o tipo do produto na tabela tipos_produto. Após executar o comando, foi chamada a função commit() da variável conection que irá confirmar o comando SQL. Posteriormente foi incluído um if, que verifica se o total de linhas armazenada no cursor é igual a 1, ou seja, se o comando foi executado com sucesso, se sim irá printar uma mensagem confirmando a inserção, se não irá printar uma mensagem de erro. Após tudo isso será chamada a função desconectar, que irá desconectar o servidor.
+
+Função deletar_produto():
+
+A função deletar_produto tem como responsabilidade deletar os produtos já inseridos no CRUD. Seu funcionamento se dá da seguinte forma: primeiro criamos a variável conection que recebeu a função conectar, fazendo assim o CRUD se conectar com o servidor MySQL. Logo após criamos a variável cursor, que será de extrema importância para podermos executar os comandos SQL no python, cursor recebeu a função cursor da variável conection. Após a criação dessas duas variáveis, foi criada uma nova variável (codigo) ela irá pedir ao usuário que digite a informação que ele gostaria de inserir. Depois essa variável, foi chamada a função execute do cursor, que executou o comando DELETE FROM produtos WHERE id={codigo}, deletando os dados do produto na tabela produtos. Após executar o comando, foi chamada a função commit() da variável conection que irá confirmar o comando SQL. Posteriormente foi incluído um if, que verifica se o total de linhas armazenada no cursor é igual a 1, ou seja, se o comando foi executado com sucesso, se sim irá printar uma mensagem confirmando a inserção, se não irá printar uma mensagem de erro. Após tudo isso será chamada a função desconectar, que irá desconectar o servidor.
+
+Função menu():
+
+Essa função menu() tem como responsabilidade ser um menu interativo para gerenciamento de produtos. Explicando linha por linha:
+print('=========Gerenciamento de Produtos=============='): Isso imprime um título para o menu, indicando que é um sistema de gerenciamento de produtos.
+
+print('Selecione uma opção: '): Esta linha solicita ao usuário que selecione uma opção do menu.
+
+print('1 - Listar.'): Isso exibe a opção 1 do menu, que é listar produtos.
+
+print('2 - Inserir.'): Isso exibe a opção 2 do menu, que é inserir produtos.
+
+print('3 - Atualizar.'): Isso exibe a opção 3 do menu, que é atualizar produtos.
+
+print('4 - Deletar.'): Isso exibe a opção 4 do menu, que é deletar produtos.
+
+opcao = int(input()): Aqui o programa lê a entrada do usuário, presumivelmente a opção do menu. Converte a entrada para um inteiro.
+
+if opcao in [1, 2, 3, 4]:: Verifica se a opção selecionada está entre 1 e 4.
+
+Se a opção for válida, o programa avança para verificar qual opção específica foi selecionada (listar, inserir, atualizar ou deletar).
+
+Dependendo da opção selecionada, o programa solicitará uma sub-opção para a ação selecionada.
+
+Após receber a sub-opção, o programa chama a função correspondente à opção selecionada.
+
+Se a opção selecionada ou a sub-opção não estiverem dentro das opções válidas, o programa exibirá "Opção inválida".
+
+Em resumo, esta função é um menu interativo que permite ao usuário selecionar entre listar, inserir, atualizar ou deletar produtos em um sistema de gerenciamento de produtos.
+
+
+
+
+
+
 
